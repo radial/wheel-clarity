@@ -1,4 +1,4 @@
-# Spoke Dockerfile for nginx
+# Spoke Dockerfile for clarity
 
 FROM            radial/spoke-base:latest
 MAINTAINER      Brian Clements <radial@brianclements.net>
