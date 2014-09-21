@@ -6,10 +6,6 @@ hub:
     build: hub
     volumes_from:
         - logs
-    volumes:
-        - /config
-        - /data
-        - /run
 clarity:
     build: spoke
     volumes_from:
