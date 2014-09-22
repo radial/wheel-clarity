@@ -10,7 +10,8 @@ RUN             apt-get -q update && apt-get -qyV install \
                 gem install clarity &&\
                 apt-get -qyV remove ruby-dev make g++ &&\
                 apt-get -qyV autoremove &&\
-                apt-get clean
+                apt-get clean &&\
+                rm -rf /var/lib/apt/lists/*
 
 # Process startup info
 ENV             SPOKE_NAME clarity
