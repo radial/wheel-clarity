@@ -11,8 +11,6 @@ RUN             apt-get -q update && apt-get -qyV install \
                 apt-get -qyV remove ruby-dev make g++ &&\
                 apt-get -qyV autoremove &&\
                 apt-get clean
-RUN             env --unset=DEBIAN_FRONTEND
-
 
 # Process startup info
 ENV             SPOKE_NAME clarity
