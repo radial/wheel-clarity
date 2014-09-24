@@ -1,14 +1,16 @@
 #!/bin/bash
 set -e
 
-LOG_DIR=${LOG_DIR:-/log}
-ERR_LOG=${ERR_LOG:-"$LOG_DIR/$HOSTNAME/clarity_stderr.log"}
+# Tunable settings
 PORT=${PORT:-80}
 USER=${USER:-daemon}
 LISTEN_ADDRESS=${LISTEN_ADDRESS:-"0.0.0.0"}
 HTTP_USER=${HTTP_USER:-anonymous}
 HTTP_PASS=${HTTP_PASS:-`date | md5sum | head -c10`}
-CLARITY_BIN=${CLARITY_BIN:-/usr/local/bin}
+
+# Misc settings
+ERR_LOG=/log/$HOSTNAME/clarity_stderr.log
+CLARITY_BIN=/usr/local/bin
 
 if [ -e /config/clarity.yml ]; then
     CONFIG=/config/clarity.yml
@@ -27,7 +29,7 @@ normal_start() {
         --user=$USER \
         --username=$HTTP_USER \
         --password=$HTTP_PASS \
-        $LOG_DIR
+        /log
 }
 
 if [ ! -e /tmp/clarity_first_run ]; then
@@ -44,7 +46,7 @@ if [ ! -e /tmp/clarity_first_run ]; then
         else
             exec $CLARITY_BIN/clarity \
                 -c $CONFIG \
-                $LOG_DIR
+                /log
         fi
     else
         exec $CLARITY_BIN/clarity "$@"
