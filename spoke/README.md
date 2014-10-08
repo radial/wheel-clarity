@@ -13,6 +13,21 @@ out-of-the-box.
 
 [clarity]: https://github.com/tobi/clarity 
 
+## Tunables
+
+Tunable environment variables; modify at runtime.
+
+**PORT**: Port to access web server.
+
+**USER**: User to run web server as in container.
+
+**LISTEN_ADDRESS**: Addresses to allow connections from.
+
+**HTTP_USER**: User used to login to the web app.
+
+**HTTP_PASS**: Password to use for login user. Default will generate a random
+password and display it in the logs.
+
 ## Radial
 
 [Radial][radial] is a [Docker][docker] container topology strategy that
