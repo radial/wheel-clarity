@@ -15,18 +15,14 @@ out-of-the-box.
 
 ## Tunables
 
-Tunable environment variables; modify at runtime.
+Tunable environment variables; modify at runtime. Italics are defaults.
 
-**PORT**: Port to access web server.
-
-**USER**: User to run web server as in container.
-
-**LISTEN_ADDRESS**: Addresses to allow connections from.
-
-**HTTP_USER**: User used to login to the web app.
-
-**HTTP_PASS**: Password to use for login user. Default will generate a random
-password and display it in the logs.
+  - **$PORT**: [_"80"_] Port to access web server.
+  - **$USER**: [_"daemon"_] User to run web server as in container.
+  - **$LISTEN_ADDRESS**: [_"0.0.0.0"_] Addresses to allow connections from.
+  - **$HTTP_USER**: [_"anonymous"_] User used to login to the web app.
+  - **$HTTP_PASS**: [_random_] Password to use for login user. Default will
+    generate a random password and display it in the logs.
 
 ## Radial
 
